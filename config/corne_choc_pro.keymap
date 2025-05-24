@@ -46,7 +46,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "Colemak";
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -55,22 +55,24 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB  &kp Q                &kp W            &kp E                &kp R              &kp T        &kp C_MUTE  &kp C_PP  &kp Y    &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
-&kp ESC  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_COMMAND D  &hml LEFT_SHIFT F  &kp G        &kp LALT    &kp RALT  &kp H    &hmr RIGHT_SHIFT J  &hmr RIGHT_COMMAND K  &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL SEMI  &kp BACKSPACE
-&kp SQT  &kp Z                &kp X            &kp C                &kp V              &kp B                              &kp N    &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp DOUBLE_QUOTES
+&kp TAB  &kp Q                &kp W            &kp F                &kp P              &kp G        &kp C_MUTE  &kp C_PP  &kp J    &kp L               &kp U                 &kp Y             &kp SEMI              &kp BSPC
+&kp ESC  &hml LEFT_CONTROL A  &hml LEFT_ALT R  &hml LEFT_COMMAND S  &hml LEFT_SHIFT T  &kp D        &kp LALT    &kp RALT  &kp H    &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL O  &kp BACKSPACE
+&kp SQT  &kp Z                &kp X            &kp C                &kp V              &kp B                              &kp K    &kp M               &kp COMMA             &kp DOT           &kp FSLH              &kp DOUBLE_QUOTES
                                                &lt 3 PAGE_UP        &lt 2 TAB          &lt 1 SPACE                        &kp RET  &kp GRAVE           &kp PAGE_DOWN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
         };
 
-        Navigation {
+        nav {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &kp F12  &trans  &trans  &kp LBKT  &kp RBKT  &kp LS(LPAR)   &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)
 &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &kp CAPS  &kp LEFT  &kp DOWN       &kp UP        &kp RIGHT     &mt PIPE NON_US_BACKSLASH
 &trans  &trans  &trans  &trans  &trans  &trans                   &trans    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP   &kp END       &kp LS(TILDE)
                         &trans  &trans  &trans                   &trans    &trans    &trans
             >;
+
+            label = "Navigation";
         };
 
         Numbers {
@@ -80,6 +82,8 @@
 &trans  &trans  &trans  &trans  &trans    &trans                  &kp MINUS     &mt EXCLAMATION N1  &mt AT_SIGN N2   &mt HASH N3              &trans     &kp LS(TILDE)
                         &trans  &trans    &trans                  &kp N0        &trans              &trans
             >;
+
+            label = "Numbers";
         };
 
         System {
@@ -89,6 +93,8 @@
 &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF       &trans                &trans                  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4
                                                    &trans                &trans                &trans                  &kp C_PLAY  &trans        &kp C_MUTE
             >;
+
+            label = "System";
         };
     };
 };
